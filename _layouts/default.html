@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body>
+    <div class="wrapper">
+
+      <div class="nav">
+        <div class="nav-left"><a class="link-ext" href="/"><span>home</span></a></div>
+        <div class="nav-right">
+          <a class="link-ext" href="{{site.github}}" target="_blank"><span>github</span></a>
+          <a class="link-ext" href="{{site.linkedIn}}" target="_blank"><span>linkedIn</span></a>
+          <a class="link-ext" href="/about"><span>about</span></a>
+        </div>
+      </div>
+
+      {%- include header.html -%}
+
+      {{ content }}
+    </div>
+
+    <!-- <div class="main-wrapper">
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </main>
+      {%- include footer.html -%}
+    </div> -->
+  </body>
+</html>
