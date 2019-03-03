@@ -13,6 +13,12 @@ $blue: #4197e6;
 $frColor: #fff;
 $white: #fff;
 $whiteTransparent: rgba(255,255,255,0.4);
+$whiteOpaque: rgba(255,255,255,0.7);
+$whiteOpaquePlus: rgba(255,255,255,0.9);
+$black: #000;
+$blackTransparent: rgba(0,0,0,0.4);
+$blackOpaque: rgba(0,0,0,0.7);
+$blackOpaquePlus: rgba(0,0,0,0.9);
 $homeMenu: #8b2323;
 $aboutMenu: #f1ede9;
 $smallText: #464340;
@@ -54,44 +60,124 @@ a:hover {
   // min-width: 420px;
 }
 
+
+.menu {
+	position: fixed;
+	top: 32px;
+	right: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 48px;
+	height: 48px;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: 0 0 8px $blackTransparent;
+	transition: transform 0.3s;
+	cursor: pointer;
+	z-index: 100;
+	
+	span {
+		position: relative;
+		display: block;
+		width: 50%;
+		height: 2px;
+		background-color: #000;
+		transition: transform 0.3s;
+		z-index: 200;
+		
+		&:nth-of-type(1) {
+			transform: translateY(-5px);
+		}
+		
+		&:nth-of-type(3) {
+			transform: translateY(5px);
+		}
+	}
+}
+
+#menu {
+	display: none;
+
+	&:checked ~ .menu {
+		background-color: transparent;
+		transition: transform 0.3s ease;
+    box-shadow: none;
+		
+		span {
+			background-color: #000;
+			transition: transform 0.3s ease;
+
+			&:nth-of-type(1) {
+				transform: translateY(1px) rotate(45deg);
+			}
+
+			&:nth-of-type(2) {
+				display: none;
+			}
+
+			&:nth-of-type(3) {
+				transform: translateY(-1px) rotate(-45deg);
+			}
+		}
+	}
+
+	&:checked ~ .nav {
+    opacity: 1;
+    bottom: 0;
+	}
+}
+
 .nav {
-  position: absolute;
+  transition: all 0.3s;
+  position: fixed;
+  opacity: 0;
   z-index: 1;
+  top: 0;
   left: 0;
   right: 0;
-  top: 24px;
-  
-  .nav-left {
-    position: absolute;
-    left: 16px;
-  }
-  
-  .nav-right {
-    position: absolute;
-    right: 16px;
-  }
-  
-  a {
-    color: $white;
+  bottom: 100%;
+  text-align: right;
+  background: $whiteOpaquePlus;
+  padding: 64px 32px 0;
+
+  ul {
+    
     display: inline-block;
-    margin: 0 8px;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+
+  a {
+    color: $black;
+    display: inline-block;
+    margin: 16px 8px;
     padding: 8px;
-    font-size: 18px;
+    font-size: 1.8em;
     position: relative;
     text-shadow: 1px 1px $textShadowBlackOpaque;
     
-    span:before {
-      content: '';
-      display: block;
-      position: absolute;
-      height: 2px;
-      background: $white;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      right: 0;
-      margin: auto;
-      transition: 0.3s;
+    &:hover span:before{
+      width: 100%;
+    }
+
+    span{
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        background: $black;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        right: 0;
+        margin: auto;
+        transition: 0.3s;
+      }
     }
   }
 
@@ -110,6 +196,17 @@ a:hover {
   background-attachment: fixed;
   min-height: 300px;
   overflow: hidden;
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.7) 100%);
+  }
 
   .heading {
     position: absolute;
@@ -150,17 +247,6 @@ a:hover {
     border-radius: 8px 0 0 0;
     background: $white;
   }
-}
-
-.header:before {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.7) 100%);
 }
 
 .slope {
@@ -292,38 +378,32 @@ $slopeRot: 10deg;
   margin-bottom: 32px;
 
   .content-title {
-    font-size: 32px;
+    font-size: 28px;
+    
+    &:hover {
+      span:before {
+        width: calc(100% + 24px);
+        left: 0;
+        opacity: 1;
+      }
+    }
 
     span {
       position: relative;
       padding-bottom: 2px;
-    }
-
-    span:before {
-      content: '';
-      display: block;
-      position: absolute;
-      height: 2px;
-      background: $linkHover;
-      width: 0;
-      bottom: 0;
-      left: -12px;
-      opacity: 0;
-      transition: 0.3s;
-    }
-  }
-
-  .content-title:hover {
-    span:before {
-      width: calc(100% + 24px);
-      left: 0;
-      opacity: 1;
-    }
-
-    span:before {
-      width: calc(100% + 24px);
-      left: 0;
-      opacity: 1;
+      
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        background: $linkHover;
+        width: 0;
+        bottom: 0;
+        left: -12px;
+        opacity: 0;
+        transition: 0.3s;
+      }
     }
   }
   
