@@ -21,7 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github: "https://github.com/ichiyouji"
 linkedIn: "https://www.linkedin.com/in/adrian-yk/"
-defaultBanner: "https://picsum.photos/1280/640?image=1003"
+defaultBanner: "https://picsum.photos/1280/640?image=1002"
 
 # Build settings
 markdown: kramdown
