@@ -9,7 +9,7 @@ banner: https://picsum.photos/g/1280/640?image=329
 
 ## This page might take a heavy load on the browser
 
-Recently I took a liking experimenting stuff on codepen. And here's what I made.
+Recently I took a liking on experimenting stuff on codepen. And here's what I made.
 
 ## Randomly generated Rorschach's ink blot
 
@@ -24,10 +24,10 @@ Below is a pen I made for this week's codepen challenge. The theme for February 
 
 ## How does it work?
 
-I used several dozens of `div` elements, shaped them into a circle, put an svg `filter` on the container and randomly generate position for each of them in JS.
+I used several dozens of `div` elements, shaped them into circles, put an svg `filter` on the container and randomly generate position for each of them in JS.
 
 The CSS `transition` property took care of the animation.
 
-My laptop fan is _whooshing_ a bit as I write this post.
+My laptop fan was _whooshing_ a bit as I wrote this post.
 
 But hey, it's kind of satisfying to look at.

@@ -24,14 +24,14 @@ Below is another pen I made for this week's codepen challenge. The theme for Feb
 
 ## How does it work?
 
-Basically the way this works is that,
-- I created a bunch of layers with background images (set the `background-attachment` to `fixed` so it aligns perfectly on each layer)
+Basically
+- Create a bunch of layers with background images (set the `background-attachment` to `fixed` so it aligns perfectly on each layer)
 - Style each layer to spread to the full height & width of the container
 - `blur` each layers with `filter`
-- and play around with its `hue-saturation` to give it a dynamic color based on it's background
+- Mpdify each layer's `hue-saturation` to give it a dynamic color effect based on it's background
 
-Then it took a bunch of CSS `clip-path`s and a bit of time to shape complex polygons one by one on each layer. But what took longer is deciding what kind of image that goes with it. The idea passed my mind, put an image of a wall/window in the front, then put a landscape on the back. I thought "That would be cool", sadly it doesn't.
+It took a bunch of CSS `clip-path`s and a bit of time to shape complex polygons one by one on each layer. But what took longer is deciding what kind of image that goes with it. An idea passed my mind. Put an image of a wall/window in the front, then put a landscape on the back. I thought "That would be cool", sadly it doesn't.
 
-I was already halfway done with the shapes, and I can't seem to find a way of putting it on top of an image without it looking off. So I flipped through a bunch of images and found this one to be the one that felt the most satisfying.
+I was already halfway done with the shapes at the time, and I can't seem to find a way of putting it on top of an image without it looking off. So I flipped through a bunch of images and found this one to be the one that felt the most satisfying.
 
-Initially I was thinking of making some symmetrical patterns or a flower garden.
+Initially I was thinking of making a more complex symmetrical patterns.
