@@ -3,7 +3,7 @@ layout: post
 title:  "I made dis #2, stained glass effect with CSS"
 date:   2019-02-28 20:00:00 +0700
 categories: css codepen
-excerpt: it looked better than I expected... I think
+excerpt: it looked better than I had expected... I think
 banner: https://picsum.photos/1280/640?image=206
 ---
 

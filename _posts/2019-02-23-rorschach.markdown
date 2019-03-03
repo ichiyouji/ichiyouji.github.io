@@ -3,7 +3,7 @@ layout: post
 title:  "I made dis #1, Rorschach's ink blot"
 date:   2019-02-23 20:00:00 +0700
 categories: css codepen
-excerpt: a rorschach's ink blot, what do you see?
+excerpt: do you see anything?
 banner: https://picsum.photos/g/1280/640?image=329
 ---
 
