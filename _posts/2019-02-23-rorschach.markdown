@@ -22,7 +22,7 @@ Below is a pen I made for this week's codepen challenge. The theme for February 
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## How does it work?
+## How it works
 
 I used several dozens of `div` elements, shaped them into circles, put an svg `filter` on the container and randomly generate position for each of them in JS.
 

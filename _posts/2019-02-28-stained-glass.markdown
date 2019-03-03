@@ -22,7 +22,7 @@ Below is another pen I made for this week's codepen challenge. The theme for Feb
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## How does it work?
+## How it works
 
 Basically
 - Create a bunch of layers with background images (set the `background-attachment` to `fixed` so it aligns perfectly on each layer)
