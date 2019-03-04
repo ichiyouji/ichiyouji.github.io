@@ -65,12 +65,12 @@ a:hover {
 	position: fixed;
 	top: 32px;
 	right: 32px;
+	width: 48px;
+	height: 48px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	width: 48px;
-	height: 48px;
 	background-color: white;
 	border-radius: 50%;
 	box-shadow: 0 0 8px $blackTransparent;
@@ -126,6 +126,8 @@ a:hover {
 	&:checked ~ .nav {
     opacity: 1;
     bottom: 0;
+    // overflow: auto;
+    height: 100%;
 	}
 }
 
@@ -137,13 +139,13 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 100%;
+  height: 0;
   text-align: right;
   background: $whiteOpaquePlus;
-  padding: 64px 32px 0;
+  overflow: hidden;
 
   ul {
-    
+    margin: 96px 32px 0;
     display: inline-block;
     padding: 0;
     li {
