@@ -26,7 +26,7 @@ defaultBanner: "https://picsum.photos/1280/640?image=1002"
 # Build settings
 markdown: kramdown
 #theme: minima
-theme: jekyll-ichijou-theme
+# theme: jekyll-ichijou-theme
 
 sass:
   sass_dir: _sass
