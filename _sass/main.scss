@@ -30,14 +30,27 @@ $largeText: #464340;
 $titleHeading: #464340;
 $textShadowBlackOpaque: rgba(0,0,0,0.3);
 
+// metrics
+
+$containerWidth: 42em;
+
 $lgScreen: 1200px;
 $mdScreen: 960px;
 $smScreen: 480px;
 
+// animations
+@keyframes slideUpOpaque {
+  0% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-// metrics
-
-$containerWidth: 800px;
+$slideUpOpaque: 0.5s ease-in-out slideUpOpaque;
 
 body {
   font-family: 'Work Sans', Helvetica, Sans-serif;
@@ -48,7 +61,7 @@ body {
 a {
   text-decoration: none;
   color: $link;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 a:hover {
@@ -209,16 +222,55 @@ a:hover {
     height: 100%;
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.7) 100%);
   }
-
-  .heading {
+  
+  .profile-head {
+    // filter: drop-shadow(0px 2px 4px rgba(193, 185, 176, 0.5));
     position: absolute;
-    top: 256px;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    padding: 0 24px;
-    text-align: center;
-    font-style: italic;
-    color: $excerpt;
+    // animation: $slideUpOpaque;
+    
+    .profile-pic {
+      position: absolute;
+      background: $frColor;
+      width: 156px;
+      height: 156px;
+      left: 0;
+      right: 0;
+      // bottom: 60px;
+      bottom: 30%;
+      margin: auto;
+      /*   border-radius: 100%; */
+      -webkit-clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
+      clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
+    }
+
+    .profile-pic:before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: url('https://s.cdpn.io/profiles/user/1400522/512.jpg?1537866711') center/ cover;
+      top: 8px;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      -webkit-clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
+      clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
+    }
+    
+    .heading {
+      position: absolute;
+      // top: 256px;
+      left: 0;
+      right: 0;
+      bottom: 18%;
+      padding: 0 24px;
+      text-align: center;
+      font-style: italic;
+      color: $whiteOpaquePlus;
+    }
   }
   
   .title-wrapper {
@@ -228,115 +280,82 @@ a:hover {
     right: 0;
     bottom: 64px;
     text-align: center;
+    animation: $slideUpOpaque;
+    
+    .title-content{
+      position: absolute;
+      text-align: center;
+      // top: 24px;
+      left: 0;
+      right: 0;
+    }
+
+    .title-content {
+      padding: 0 16px;
+    
+      .title-text {
+        color: #fefefe;
+        font-size: 2.5em;
+        text-shadow: 2px 2px $textShadowBlackOpaque;
+        @media screen and (max-width: $mdScreen) {
+          font-size: 2em;
+        }
+        @media screen and (max-width: $smScreen) {
+          font-size: 1.8em;
+        }
+      }
+    
+      .title-sub {
+        margin-top: 8px;
+        font-size: 1.4em;
+        color: #fefefe;
+        font-style: italic;
+        text-shadow: 1px 1px $textShadowBlackOpaque;
+        @media screen and (max-width: $mdScreen) {
+          font-size: 1.4em;
+        }
+        @media screen and (max-width: $smScreen) {
+          font-size: 1em;
+        }
+      }
+    }
   }
   
-  .title-content{
-    position: absolute;
-    text-align: center;
-    top: 24px;
-    left: 0;
-    right: 0;
-  }
   
   .image-watermark {
     position: absolute;
     bottom: 0;
     right: 0;
-    color: $blue;
+    color: $black;
     font-size: 12px;
     font-weight: 300;
     padding: 4px 8px;
     border-radius: 8px 0 0 0;
-    background: $white;
+    background: $whiteOpaque;
   }
 }
 
-.slope {
-  width: 100%;
-  position: absolute;
-  height: 156px;
-  background-color: $frColor;
-  bottom: 0;
-}
+// .slope {
+//   width: 100%;
+//   position: absolute;
+//   height: 156px;
+//   background-color: $frColor;
+//   bottom: 0;
+// }
 
-$slopeRot: 10deg;
+// $slopeRot: 10deg;
 
-.slope-lt {
-  right: 50%;
-  transform: rotate(-$slopeRot);
-  transform-origin: 100% 0;
-}
+// .slope-lt {
+//   right: 50%;
+//   transform: rotate(-$slopeRot);
+//   transform-origin: 100% 0;
+// }
 
-.slope-rt {
-  left: 50%;
-  transform: rotate($slopeRot);
-  transform-origin: 0 0;
-}
-
-.profile-head {
-  // filter: drop-shadow(0px 2px 4px rgba(193, 185, 176, 0.5));
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.profile-pic:before {
-  content: "";
-  display: block;
-  position: absolute;
-  background: url('https://s.cdpn.io/profiles/user/1400522/512.jpg?1537866711') center/ cover;
-  top: 8px;
-  bottom: 8px;
-  left: 8px;
-  right: 8px;
-  -webkit-clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
-  clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
-}
-
-.profile-pic {
-  position: absolute;
-  background: $frColor;
-  width: 156px;
-  height: 156px;
-  left: 0;
-  right: 0;
-  bottom: 60px;
-  margin: auto;
-/*   border-radius: 100%; */
-  -webkit-clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
-  clip-path: polygon(45% 0, 86% 7%, 100% 54%, 72% 96%, 5% 86%, 7% 16%);
-}
-
-.title-content {
-  padding: 0 16px;
-
-  .title-text {
-    color: #fefefe;
-    font-size: 2.5em;
-    text-shadow: 2px 2px $textShadowBlackOpaque;
-    @media screen and (max-width: $mdScreen) {
-      font-size: 2em;
-    }
-    @media screen and (max-width: $smScreen) {
-      font-size: 1.4em;
-    }
-  }
-
-  .title-sub {
-    margin-top: 8px;
-    font-size: 1.4em;
-    color: #fefefe;
-    font-style: italic;
-    text-shadow: 1px 1px $textShadowBlackOpaque;
-    @media screen and (max-width: $mdScreen) {
-      font-size: 1.4em;
-    }
-    @media screen and (max-width: $smScreen) {
-      font-size: 0.8em;
-    }
-  }
-}
+// .slope-rt {
+//   left: 50%;
+//   transform: rotate($slopeRot);
+//   transform-origin: 0 0;
+// }
 
 
 .menu {
@@ -354,23 +373,27 @@ $slopeRot: 10deg;
   max-width: $containerWidth;
   padding: 24px 24px 48px;
   margin: auto;
+  
+  .content-wrapper {
+    animation: $slideUpOpaque;
+  }
 }
 
-.separator:before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: calc(100% - 16px);
-  max-width: 900px;
-  // min-width: 420px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(118,147,160,1) 50%, rgba(255,255,255,0) 100%);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  top: -20px;
-}
+// .separator:before {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   width: calc(100% - 16px);
+//   max-width: 900px;
+//   // min-width: 420px;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   height: 2px;
+//   background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(118,147,160,1) 50%, rgba(255,255,255,0) 100%);
+//   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+//   top: -20px;
+// }
 
 .content-list {
   
@@ -380,7 +403,7 @@ $slopeRot: 10deg;
   margin-bottom: 32px;
 
   .content-title {
-    font-size: 28px;
+    font-size: 26px;
     
     &:hover {
       span:before {

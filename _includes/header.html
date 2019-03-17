@@ -9,8 +9,8 @@
     <div class="slope slope-rt"></div>
     <div class="profile-head">
       <div class="profile-pic"></div>
+      <div class="heading"><span class="heading-title">{{ site.description }}</span></div>
     </div>
-    <div class="heading"><span class="heading-title">{{ site.description }}</span></div>
   {% else if page.layout == 'post' %}
     <div class="title-wrapper">
       <div class="title-content">
@@ -19,7 +19,7 @@
       </div>
     </div>
   {% endif %}
-  <!-- <div class="image-watermark">
-    <span>images provided by </span><a href="https://picsum.photos/">picsum</a>
-  </div> -->
+  <div class="image-watermark">
+    <span>images generated from </span><a href="https://picsum.photos/">picsum</a>
+  </div>
 </div>
