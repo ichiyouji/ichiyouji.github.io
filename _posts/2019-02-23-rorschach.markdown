@@ -13,7 +13,7 @@ Recently I took a liking on experimenting stuff on codepen. And here's what I ma
 
 ## Randomly generated Rorschach's ink blot
 
-Below is a pen I made for this week's codepen challenge. The theme for February is shapes, and this week's are blobs.
+Below is a pen I made for this week's codepen challenge. The theme for February is shapes, and this week's theme is blobs.
 
 <p class="codepen" data-height="640" data-theme-id="dark" data-default-tab="result" data-user="anthesema" data-slug-hash="GzzGpQ" style="height: 420px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="transforming rorschach&amp;apos;s mask">
   <span>See the Pen <a href="https://codepen.io/anthesema/pen/GzzGpQ/">
